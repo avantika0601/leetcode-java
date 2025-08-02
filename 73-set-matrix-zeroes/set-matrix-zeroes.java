@@ -1,22 +1,19 @@
 class Solution {
     public void setZeroes(int[][] matrix) {
-        ArrayList<Integer> rows = new ArrayList<Integer>();
-        ArrayList<Integer> cols = new ArrayList<Integer>();
+        int[] rows = new int[matrix.length];
+        int[] cols = new int[matrix[0].length];
 
         for(int i=0;i<matrix.length;i++) {
             for(int j=0; j<matrix[i].length; j++){
                 if(matrix[i][j] == 0){
-                    rows.add(i);
-                    cols.add(j);
+                    rows[i] = 1;
+                    cols[j] = 1;
                 }
             }
         }
         for(int i=0;i<matrix.length;i++) {
             for(int j=0; j<matrix[i].length; j++){
-                if(rows.contains(i)){
-                    matrix[i][j]=0;
-                }
-                if(cols.contains(j)){
+                if(rows[i]==1 || cols[j] ==1){
                     matrix[i][j]=0;
                 }
             }
