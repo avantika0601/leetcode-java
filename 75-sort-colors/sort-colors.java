@@ -1,22 +1,17 @@
 class Solution {
     public void sortColors(int[] nums) {
-        Map<Integer, Integer> mp = new HashMap<>();
-        for(int x: nums){
-            mp.put(x, mp.getOrDefault(x,0) + 1);
+        int cnt1=0, cnt2=0, cnt3=0;
+        for(int x:nums){
+            if(x==0) cnt1++;
+            else if(x==1)cnt2++;
+            else cnt3++;
         }
-        int x=mp.getOrDefault(0, 0);
-        int y=mp.getOrDefault(1, 0);
-        int z=mp.getOrDefault(2, 0);
-        System.out.println(x);
-        System.out.println(y);
-        System.out.println(z);
-
-        for(int i=0;i<x;i++){
+        for(int i=0;i<cnt1;i++){
             nums[i]=0;
         }
-         for(int i=x;i<x+y;i++){
+         for(int i=cnt1;i<cnt1+cnt2;i++){
             nums[i]=1;
-        }for(int i=x+y;i<x+y+z;i++){
+        }for(int i=cnt1+cnt2;i<nums.length;i++){
             nums[i]=2;
         }
 
