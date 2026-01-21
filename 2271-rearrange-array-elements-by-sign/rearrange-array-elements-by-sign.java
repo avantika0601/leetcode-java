@@ -1,15 +1,14 @@
 class Solution {
     public int[] rearrangeArray(int[] nums) {
-        int n=nums.length;
-        int[] res=new int[n];
+        int[] res=new int[nums.length];
         int posIndex=0, negIndex=1;
-        for(int i=0;i<n;i++){
-            if(nums[i]<0){
-                res[negIndex]=nums[i];
+        for(int num: nums){
+            if(num<0){
+                res[negIndex]=num;
                 negIndex+=2;
             }
             else{
-                res[posIndex]=nums[i];
+                res[posIndex]=num;
                 posIndex+=2;
             }
         }
