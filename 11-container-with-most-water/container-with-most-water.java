@@ -3,6 +3,7 @@ class Solution {
         int maxArea=0;
         int i=0, j= height.length-1;
         while(i<j){
+            int area=
             maxArea=Math.max((j-i)*(Math.min(height[i], height[j])), maxArea);
             if(height[i]<height[j]){
                 i++;
